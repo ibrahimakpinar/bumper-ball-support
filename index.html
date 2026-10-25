@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bumper Ball Privacy Policy</title>
+<style>
+:root{--bg:#E8F3EA;--fg:#13281D;--muted:#506A5B;--line:#C9DFCF;color-scheme:light}
+@media (prefers-color-scheme: dark){:root{--bg:#0D1A13;--fg:#E9F7EE;--muted:#97B3A2;--line:#26402F;color-scheme:dark}}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;margin:0;padding:32px 16px}
+main{max-width:65ch;margin:0 auto}
+h1{line-height:1.15}
+p,li{color:var(--fg)}
+small{color:var(--muted)}
+a{color:inherit}
+nav{max-width:65ch;margin:0 auto 8px;text-align:right}
+nav a{display:inline-block;padding:4px 12px;border:2px solid var(--line);border-radius:999px;text-decoration:none;font-weight:700;font-size:14px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav><a href="#" id="sw"></a></nav>
+
+<main lang="en" id="en">
+<h1>Bumper Ball Privacy Policy</h1>
+<p><small>Operated by MiaM, contact: miam.akpinar[at]gmail[dot]com.</small></p>
+<h2>What we collect</h2>
+<ul>
+  <li><b>The name you type in.</b> It is shown to other players in your room and on the hall of fame.</li>
+  <li><b>A random player ID</b> created on your device so your wins are counted to you. It is not linked to your phone, email or any account.</li>
+  <li><b>Game results:</b> wins, goals and rounds played per room code, who scored on whom (for the nemesis and revenge features), your XP and level, and the pattern, hat and trail you chose.</li>
+</ul>
+<h2>What we don't collect</h2>
+<p>No email address, no location, no contacts, no photos, no advertising IDs and no tracking. There are no ads and no in-app purchases.</p>
+<h2>How it is used and stored</h2>
+<p>The data is used only to run the game and show the hall of fame. It is stored on the game server and is never sold or shared with third parties.</p>
+<h2>Deleting your data</h2>
+<p>Email miam.akpinar[at]gmail[dot]com with your player name and room code and we will remove your results. Uninstalling the app or clearing site data removes your player ID from your device.</p>
+<h2>Children</h2>
+<p>Bumper Ball is meant for workplace use and is not directed at children under 13.</p>
+<p><a href="./">Back to the game</a></p>
+</main>
+
+<main lang="tr" id="tr" hidden>
+<h1>Bumper Ball Gizlilik Politikası</h1>
+<p><small>İşleten: Miam, iletişim: miam.akpinar[at]gmail[dot]com.</small></p>
+<h2>Topladığımız bilgiler</h2>
+<ul>
+  <li><b>Yazdığın isim.</b> Odandaki diğer oyunculara ve şöhret listesinde gösterilir.</li>
+  <li><b>Rastgele bir oyuncu kimliği.</b> Galibiyetlerinin sana sayılması için cihazında oluşturulur. Telefonuna, e-postana veya herhangi bir hesaba bağlı değildir.</li>
+  <li><b>Oyun sonuçları:</b> oda koduna göre galibiyetler, goller ve oynanan turlar; kimin kime gol attığı (baş düşman ve intikam özellikleri için); XP'n ve seviyen; seçtiğin desen, şapka ve iz.</li>
+</ul>
+<h2>Toplamadığımız bilgiler</h2>
+<p>E-posta adresi, konum, kişiler, fotoğraflar ve reklam kimlikleri toplanmaz; takip yapılmaz. Reklam ve uygulama içi satın alma yoktur.</p>
+<h2>Nasıl kullanılır ve saklanır</h2>
+<p>Veriler yalnızca oyunu çalıştırmak ve şöhret listesini göstermek için kullanılır. Oyun sunucusunda saklanır; asla satılmaz ve üçüncü taraflarla paylaşılmaz.</p>
+<h2>Verilerini silme</h2>
+<p>Oyuncu adın ve oda kodunla miam.akpinar[at]gmail[dot]com adresine yaz, sonuçlarını kaldıralım. Uygulamayı silmek veya site verilerini temizlemek oyuncu kimliğini cihazından kaldırır.</p>
+<h2>Çocuklar</h2>
+<p>Bumper Ball iş yerinde kullanım için tasarlanmıştır ve 13 yaşından küçük çocuklara yönelik değildir.</p>
+<p><a href="./">Oyuna dön</a></p>
+</main>
+
+<script>
+(function(){
+  var saved=null; try{ saved=localStorage.getItem("ba-lang"); }catch(e){}
+  var q=new URLSearchParams(location.search).get("lang");
+  var langs=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"en"]).map(function(l){return String(l).slice(0,2).toLowerCase();});
+  var lang=q==="tr"||q==="en"?q:saved==="tr"||saved==="en"?saved:(langs.find(function(l){return l==="tr"||l==="en";})||"en");
+  function show(l){
+    lang=l; document.documentElement.lang=l;
+    document.getElementById("en").hidden=l!=="en"; document.getElementById("tr").hidden=l!=="tr";
+    var sw=document.getElementById("sw"); sw.textContent=l==="tr"?"English":"Türkçe";
+    document.title=l==="tr"?"Bumper Ball Gizlilik Politikası":"Bumper Ball Privacy Policy";
+  }
+  document.getElementById("sw").addEventListener("click",function(e){ e.preventDefault(); show(lang==="tr"?"en":"tr"); });
+  show(lang);
+})();
+</script>
+</body>
+</html>
